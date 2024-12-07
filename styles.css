@@ -4,6 +4,25 @@ body {
   height: 100vh;
 }
 
+/* Default styles for h1 */
+h1 {
+    font-size: 2.5rem; /* Default size for h1 */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem; /* Size equivalent to h3 */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Smaller size for very small screens */
+    }
+}
+
+
 .container {
   max-width: fit-content;
   margin-left: auto;
