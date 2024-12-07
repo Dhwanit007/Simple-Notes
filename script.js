@@ -135,3 +135,25 @@ window.addEventListener('DOMContentLoaded', () => {
     modeText.textContent = "Light Mode"
   }
 });
+
+// Function to replace h1 with h3 for smaller screens
+function replaceH1WithH3() {
+    const h1Elements = document.querySelectorAll('h1');
+
+    h1Elements.forEach(h1 => {
+        // Create a new h3 element
+        const h3 = document.createElement('h3');
+        h3.innerHTML = h1.innerHTML; // Copy content
+        h3.className = h1.className; // Copy class
+
+        // Replace h1 with h3 in the DOM
+        h1.parentNode.replaceChild(h3, h1);
+    });
+}
+
+// Add event listener to handle screen resizing
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+        replaceH1WithH3();
+    }
+});
