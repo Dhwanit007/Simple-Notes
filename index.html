@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Notes</title>
+  <link rel="icon" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
+  <!-- Apple Touch Icon (for iOS devices) -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <img src="favicon-32x32.png" alt="logo" />
+    <h1>Simple Notes</h1>
+    <div><button id="modeToggle"></button><span id="modeText">Light Mode</span></div>
+  </header><br><br>
+  <div class="container">
+    <!-- Add Task Section -->
+    <div class="add-task-section">
+      <h2>Add New Task</h2>
+      <div class="todo-form">
+        <input type="text" placeholder="Enter Today's Date" id="taskDate" />
+        <textarea id="taskInput" placeholder="Enter task details"></textarea>
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+    </div>
+
+    <!-- Task List Section -->
+    <div class="task-list-section">
+      <h2>Tasks</h2>
+      <ul id="taskList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

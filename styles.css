@@ -1,0 +1,433 @@
+body {
+  background-color: #f9f9f9;
+  color: #4aafd6;
+  height: 100vh;
+}
+
+.container {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* Two columns */
+  gap: 20px;
+  width: 80%;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.add-task-section {
+  border-right: 3px solid #ddd;
+  padding: 50px;
+}
+
+.task-list-section {
+  padding-left: 20px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-form textarea,
+.todo-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.todo-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.todo-form textarea:focus,
+.todo-form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.todo-form button {
+  width: 115%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-form button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+}
+
+li span {
+  margin-bottom: 5px;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li button {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* DARK MODE AND LIGHT MODE TOGGLE SWITCH */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Light mode (default) */
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container.light-mode {
+  background-color: #fff;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container.dark-mode {
+  background-color: #1e1e1e;
+}
+
+.todo-form textarea,
+.todo-form input[type="text"],
+.todo-form button,
+li {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.todo-form textarea.dark-mode,
+.todo-form input[type="text"].dark-mode {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+li.dark-mode {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+}
+
+.todo-form button.dark-mode {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.todo-form button.dark-mode:hover {
+  background-color: #444;
+}
+
+/* #modeToggle {
+  border: 2px #121212 solid;
+  border-radius: 10%;
+} */
+
+/* Style for the toggle switch container */
+#modeToggle {
+  position: relative;
+  display: flex;
+  gap :10px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Adjust the text style */
+#modeText {
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Text color for dark mode */
+body.dark-mode #modeText {
+  color: #e0e0e0;
+}
+
+/* The "slider" background */
+#modeToggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+/* The round toggle knob */
+#modeToggle::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode active state */
+body.dark-mode #modeToggle::before {
+  background-color: #000000;
+  /* Highlight color for active state */
+}
+
+body.dark-mode #modeToggle::after {
+  transform: translateX(30px);
+  /* Move knob to the right */
+}
+
+/* Add accessible text hidden for screen readers */
+#modeToggle span {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* RESPONSIVE DESIGN */
+/* For tablets and smaller screens (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    /* Single column layout */
+    gap: 10px;
+  }
+
+  .add-task-section,
+  .task-list-section {
+    border: none;
+    padding: 0;
+  }
+
+  .add-task-section {
+    border-bottom: 3px solid #ddd;
+    padding: 50px;
+  }
+}
+
+/* For mobile screens (480px and below) */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .todo-form textarea {
+    height: 60px;
+    /* Smaller height for smaller screens */
+  }
+
+  li {
+    padding: 8px;
+  }
+
+  li button {
+    font-size: 0.9em;
+  }
+
+  .add-task-section {
+    border-bottom: 3px solid #ddd;
+    padding: 50px;
+  }
+}
+
+/* Additional responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    grid-template-columns: 1fr;
+    /* Single column layout for tablets */
+  }
+
+  .add-task-section {
+    border-bottom: 3px solid #ddd;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  h1,
+  h2 {
+    font-size: 1.2rem;
+    /* Smaller headings for very small screens */
+  }
+
+  .todo-form textarea,
+  .todo-form input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  .add-task-section {
+    border-bottom: 3px solid #ddd;
+    padding: 50px;
+  }
+
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Scrollbar thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Hover color for scrollbar thumb */
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  /* Thin scrollbar */
+  scrollbar-color: #888 #f1f1f1;
+  /* Thumb and track colors */
+}
+
+
+/* NEW CSS FOR DATE , TEXTAREA AND "ADD TASK" BUTTON */
+/* Ensure consistent width for inputs, textarea, and button */
+.todo-form input[type="text"],
+.todo-form textarea,
+.todo-form button {
+  width: 100%;
+  /* Same width for all */
+  max-width: 400px;
+  /* Optional: Limit the width for larger screens */
+  box-sizing: border-box;
+  /* Include padding and border in width */
+  margin: 0 auto;
+  /* Center align */
+}
+
+/* Add spacing between elements */
+.todo-form input[type="text"],
+.todo-form textarea {
+  margin-bottom: 15px;
+  /* Add space below inputs */
+}
+
+.todo-form button {
+  margin-top: 10px;
+  /* Space above button */
+}
+
+/* Improve button aesthetics */
+.todo-form button {
+  padding: 12px 15px;
+  /* Adjust button size */
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #4aafd6;
+  /* Match your theme color */
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-form button:hover {
+  background-color: #007bff;
+  /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .todo-form input[type="text"],
+  .todo-form textarea,
+  .todo-form button {
+    max-width: 100%;
+    /* Full width for smaller screens */
+  }
+
+  .add-task-section {
+    border-bottom: 3px solid #ddd;
+    padding: 50px;
+  }
+}
