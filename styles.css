@@ -6,21 +6,26 @@ body {
 
 /* Default styles for h1 */
 h1 {
-    font-size: 2.5rem; /* Default size for h1 */
+  font-size: 2.5rem; /* Original size for larger screens */
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.75rem; /* Size equivalent to h3 */
-    }
+  h1 {
+      font-size: 1.5rem; /* Size similar to h4 */
+      font-weight: normal; /* Match h4's default weight */
+  }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem; /* Smaller size for very small screens */
-    }
+  h1 {
+      font-size: 1.2rem; /* Even smaller size for very small screens */
+      line-height: 1.1;
+  }
 }
+
 
 
 .container {
