@@ -137,23 +137,25 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Function to replace h1 with h3 for smaller screens
-function replaceH1WithH3() {
-    const h1Elements = document.querySelectorAll('h1');
+function replaceH1WithH4() {
+  const h1Elements = document.querySelectorAll('h1');
 
-    h1Elements.forEach(h1 => {
-        // Create a new h3 element
-        const h3 = document.createElement('h3');
-        h3.innerHTML = h1.innerHTML; // Copy content
-        h3.className = h1.className; // Copy class
-
-        // Replace h1 with h3 in the DOM
-        h1.parentNode.replaceChild(h3, h1);
-    });
+  h1Elements.forEach(h1 => {
+      const h4 = document.createElement('h4');
+      h4.innerHTML = h1.innerHTML; // Copy content
+      h4.className = h1.className; // Copy class
+      h1.parentNode.replaceChild(h4, h1); // Replace in DOM
+  });
 }
 
-// Add event listener to handle screen resizing
+// Trigger replacement on smaller screens
+if (window.innerWidth <= 768) {
+  replaceH1WithH4();
+}
+
+// Optional: Reapply on window resize
 window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768) {
-        replaceH1WithH3();
-    }
+  if (window.innerWidth <= 768) {
+      replaceH1WithH4();
+  }
 });
