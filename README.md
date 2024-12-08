@@ -9,7 +9,7 @@ Website is still UnderDevelopment..
 Live Demo at : https://dhwanit007.github.io/Simple-Notes/
 
 ![Screenshot](https://github.com/user-attachments/assets/fc998b26-de5a-4f9c-9e0b-f7479ad63c07)
-Screenshot of website (Light Mode)
+- Screenshot of website (Light Mode)
 
 
 
